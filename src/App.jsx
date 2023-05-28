@@ -19,6 +19,7 @@ import Summary from './Summary';
 import TableRow from './TableRow';
 
 function App() {
+  const [cart, setCart] = useState([1, 2, 3]);
   return (
     <>
       <PageHeader />
@@ -37,7 +38,15 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                <TableRow />
+                {cart.map((item) => (
+                  <TableRow />
+                ))}
+                {cart.length === 0 && (
+                <tr>
+                  <td>vai exibir</td>
+                </tr>
+                )}
+
               </tbody>
             </table>
           </section>
